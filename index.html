@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GamerZone - Shop for Gamers</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #39ff14;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .navbar {
+      background: linear-gradient(90deg, #000 0%, #111 100%);
+      box-shadow: 0 0 15px #39ff14;
+      padding: 1rem 0;
+    }
+
+    .navbar-brand,
+    .nav-link {
+      color: #39ff14 !important;
+      font-weight: 900;
+      font-size: 1.5rem;
+    }
+
+    .navbar-brand:hover,
+    .nav-link:hover {
+      color: #0dcaf0 !important;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      min-height: 60vh;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+      color: #39ff14;
+      padding: 2rem;
+      text-shadow: 2px 2px 8px #000;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.3rem;
+      max-width: 700px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .btn-primary {
+      background-color: #39ff14;
+      border: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .btn-primary:hover {
+      background-color: #2eff00;
+      color: #000;
+    }
+
+    .product-card {
+      background-color: #1c1c1c;
+      border: 1px solid #39ff14;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      color: #39ff14;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px #39ff14;
+    }
+
+    .product-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .card-body {
+      padding: 1rem;
+    }
+
+    footer {
+      background-color: #000;
+      padding: 20px 0;
+      text-align: center;
+      color: #39ff14;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 576px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .navbar-brand,
+      .nav-link {
+        font-size: 1.1rem;
+      }
+
+      .product-img {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">🎮 GamerZone</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Cart 🛒</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1 class="display-4">Level Up Your Gaming Gear</h1>
+    <p class="lead">
+      Gear up like a pro with cutting-edge gadgets. From RGB mechanical keyboards to ultra-responsive gaming mice and immersive audio gear – we’ve got it all!
+    </p>
+    <a href="#products" class="btn btn-primary mt-3 btn-lg">Explore Now</a>
+  </section>
+
+  <section id="products" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Featured Products</h2>
+      <div class="row g-4">
+        <!-- Product 1 -->
+        <div class="col-md-4 d-flex">
+          <div class="card product-card">
+            <img src="https://media.istockphoto.com/id/1209783189/photo/gamepads-headphones-and-keyboard-with-mouse-on-old-wood-blue-table.jpg?s=612x612&w=0&k=20&c=goDN25yRfKodSMLQBEVZgbDvgUFE4U36G___oQqkxeE=" alt="Gaming Headset" class="product-img">
+            <div class="card-body">
+              <h5 class="card-title">Gaming Headset</h5>
+              <p class="card-text">Experience crystal-clear sound with our top-rated headset.</p>
+              <button class="btn btn-primary w-100">Buy Now - ₹1999</button>
+            </div>
+          </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="col-md-4 d-flex">
+          <div class="card product-card">
+            <img src="https://media.istockphoto.com/id/1396231106/photo/gaming-keyboard-with-backlight.jpg?s=612x612&w=0&k=20&c=V7prxIMe3fMyjk2lI0Fr6l523xyj4bzf-cnY84wE7RQ=" alt="Keyboard" class="product-img">
+            <div class="card-body">
+              <h5 class="card-title">Mechanical Keyboard</h5>
+              <p class="card-text">RGB backlight, tactile keys and premium build.</p>
+              <button class="btn btn-primary w-100">Buy Now - ₹2499</button>
+            </div>
+          </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="col-md-4 d-flex">
+          <div class="card product-card">
+            <img src="https://media.istockphoto.com/id/1091778794/photo/computer-mouse-isolated-on-white.jpg?s=612x612&w=0&k=20&c=mEGtmJ8dfonBrcFNeyGz0lTp7452PvcjA1DON_22ZH8=" alt="Gaming Mouse" class="product-img">
+            <div class="card-body">
+              <h5 class="card-title">Gaming Mouse</h5>
+              <p class="card-text">Precision tracking, ergonomic design, customizable DPI.</p>
+              <button class="btn btn-primary w-100">Buy Now - ₹999</button>
+            </div>
+          </div>
+        </div>
+        <!-- Product 4 -->
+        <div class="col-md-4 d-flex">
+          <div class="card product-card">
+            <img src="https://media.istockphoto.com/id/1297324374/photo/ergonomic-computer-chair.jpg?s=612x612&w=0&k=20&c=pp01zJAeAoD6XTh4iO1HFzb23DUFD7Fl-C7G35EfCP0=" alt="Gaming Chair" class="product-img">
+            <div class="card-body">
+              <h5 class="card-title">Gaming Chair</h5>
+              <p class="card-text">Ergonomic comfort for long sessions.</p>
+              <button class="btn btn-primary w-100">Buy Now - ₹8999</button>
+            </div>
+          </div>
+        </div>
+        <!-- Product 5 -->
+        <div class="col-md-4 d-flex">
+          <div class="card product-card">
+            <img src="https://media.istockphoto.com/id/530010099/photo/video-game-controller.jpg?s=612x612&w=0&k=20&c=UZd4vtMgOXRH-HBfClKOIrwxe3xlRI_P7OL5M7p4oNY=" alt="Gaming Console" class="product-img">
+            <div class="card-body">
+              <h5 class="card-title">Gaming Console</h5>
+              <p class="card-text">Insane performance console for PC/PS games.</p>
+              <button class="btn btn-primary w-100">Buy Now - ₹49999</button>
+            </div>
+          </div>
+        </div>
+        <!-- Product 6 -->
+        <div class="col-md-4 d-flex">
+          <div class="card product-card">
+            <img src="https://media.istockphoto.com/id/1412634953/photo/podcast-recording-station.jpg?s=612x612&w=0&k=20&c=224aSXhwJ4wBm7TgAkR6vLvzz_zIK-TNJ-FtEypVJx0=" alt="Streaming Mic" class="product-img">
+            <div class="card-body">
+              <h5 class="card-title">Streaming Mic</h5>
+              <p class="card-text">Studio-grade mic for streaming & podcasting.</p>
+              <button class="btn btn-primary w-100">Buy Now - ₹3499</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Contact Us</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your name">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email">
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="4" placeholder="Your message..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 GamerZone. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
