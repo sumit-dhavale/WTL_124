@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pokémon Fan Dex</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: url('https://wallpaperaccess.com/full/16692.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .overlay {
+      background: rgba(0, 0, 0, 0.55);
+      min-height: 100vh;
+      padding: 20px;
+    }
+    h1 {
+      font-family: 'Trebuchet MS', sans-serif;
+      font-size: 2.8rem;
+      color: #ffcb05;
+      text-shadow: 2px 2px 5px #2a75bb;
+      margin-bottom: 10px;
+    }
+    input {
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      width: 250px;
+      font-size: 1rem;
+      margin-right: 10px;
+      outline: none;
+    }
+    button {
+      padding: 10px 15px;
+      background: #2a75bb;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #3c5aa6;
+    }
+    .pokemon-card {
+      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 20px;
+      border-radius: 12px;
+      display: inline-block;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      max-width: 350px;
+    }
+    .pokemon-card img {
+      width: 150px;
+      height: 150px;
+    }
+    .stat {
+      background: rgba(255, 255, 255, 0.2);
+      margin: 5px;
+      padding: 5px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>Pokémon Fan Dex</h1>
+    <input type="text" id="pokemonName" placeholder="Enter Pokémon name (e.g., pikachu)">
+    <button onclick="getPokemon()">Search</button>
+    <div id="pokemonInfo"></div>
+  </div>
+
+  <script>
+    async function getPokemon() {
+      const name = document.getElementById("pokemonName").value.toLowerCase().trim();
+      const pokemonInfo = document.getElementById("pokemonInfo");
+      pokemonInfo.innerHTML = "Loading...";
+
+      try {
+        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+        if (!res.ok) {
+          pokemonInfo.innerHTML = "Pokémon not found! Try again.";
+          return;
+        }
+        const data = await res.json();
+
+        pokemonInfo.innerHTML = `
+          <div class="pokemon-card">
+            <h2 style="color:#ffcb05;text-shadow:1px 1px 3px #2a75bb;">${data.name.toUpperCase()}</h2>
+            <img src="${data.sprites.front_default}" alt="${data.name}">
+            <p><strong>Height:</strong> ${data.height}</p>
+            <p><strong>Weight:</strong> ${data.weight}</p>
+            <h3>Stats</h3>
+            ${data.stats.map(stat => `<div class="stat">${stat.stat.name}: ${stat.base_stat}</div>`).join("")}
+          </div>
+        `;
+      } catch (error) {
+        pokemonInfo.innerHTML = "Error fetching Pokémon data.";
+      }
+    }
+  </script>
+</body>
+</html>
